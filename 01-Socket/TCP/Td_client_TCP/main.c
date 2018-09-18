@@ -24,7 +24,7 @@
  */
 int main(int argc, char** argv) {
 
-    /*int socketClient;
+   /* int socketClient;
     struct sockaddr_in infosServeur;
     int entierAEnvoyer = 125;
     int entierRecu;
@@ -39,7 +39,8 @@ int main(int argc, char** argv) {
     }
 
     // Init des infos serveur 
-    infosServeur.sin_addr.s_addr = inet_addr("172.18.58.83");
+    //infosServeur.sin_addr.s_addr = inet_addr("172.18.58.82");
+    infosServeur.sin_addr.s_addr = inet_addr("172.0.0.1");
     infosServeur.sin_family = AF_INET;
     infosServeur.sin_port = htons(5555);
     int addrlen = sizeof (infosServeur);
@@ -67,14 +68,14 @@ int main(int argc, char** argv) {
     int retourWrite;
     int retourRead;
 
-    /* Création de la socket client */
+    // Création de la socket client 
     socketClient = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (socketClient == -1) {
         printf("Problème création socket client : %s \n", strerror(errno));
     }
 
-    /* Init des infos serveur */
-    infosServeur.sin_addr.s_addr = inet_addr("172.18.58.83");
+    // Init des infos serveur 
+    infosServeur.sin_addr.s_addr = inet_addr("172.18.58.82");
     infosServeur.sin_family = AF_INET;
     infosServeur.sin_port = htons(6666);
     int addrlen = sizeof (infosServeur);
